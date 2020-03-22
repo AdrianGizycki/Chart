@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Chart</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
+</html>
+
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = "Segoe UI";
+    Chart.defaults.global.defaultsFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777'
+
+    let massPopChart = new Chart(myChart, {
+        type: 'bar',
+        data:{
+            labels:['04.03','05.03','06.03','07.03','08.03','09.03','10.03','11.03','12.03','13.03','14.03','15.03','16.03','17.03', '18.03', '19.03', '20.03', '21.03'],
+            datasets:[{
+                label: 'Potwierdzone przypadki koronawirusa w Polsce',
+                data: [
+                    1,
+                    1,
+                    5,
+                    6,
+                    11,
+                    17,
+                    22,
+                    31,
+                    51,
+                    68,
+                    104,
+                    125,
+                    177,
+                    238,
+                    287,
+                    355,
+                    425,
+                    536,
+                    
+                ],
+                backgroundColor: [
+                    
+                ],
+                borderWidth: 1,
+                borderColor:'#777',
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#000',
+            }]
+        },
+        options:{
+            title:{
+                display: true,
+                text: 'Liczba potwierdzonych przypadków koronawirusa w PL',
+                fontSize: 25,
+            },
+            legend: {
+                display: false,
+                position: 'bottom',
+                labels:{
+                    fontColor: '#000'
+                }
+            },
+            layout:{
+                padding:{
+                    left:0,
+                    right: 0,
+                    bottom:0,
+                    top:0
+                }
+            }
+        },
+    });
+</script>
